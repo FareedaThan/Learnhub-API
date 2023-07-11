@@ -64,8 +64,8 @@ export async function getVideoDetails(
 // async function main() {
 //   const url = "https://www.youtube.com/watch?v=brs6-n87zeo&ab_channel=SHINee";
 
-//   const vidInfo = await getVideoDetails(url);
-//   console.log(vidInfo.creatorName);
+//   const vidInfo = Object.keys(await getVideoDetails(url));
+//   console.log(vidInfo);
 // }
 
 // main();

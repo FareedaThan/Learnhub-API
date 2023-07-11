@@ -56,7 +56,7 @@ class HandlerUser implements IHandlerUser {
     if (!username || !password) {
       return res
         .status(400)
-        .json({ error: "missing username or password" })
+        .json({ error: "missing username or password", statusCode: 401 })
         .end();
     }
 
@@ -66,7 +66,7 @@ class HandlerUser implements IHandlerUser {
         if (!compareHash(password, user.password)) {
           return res
             .status(401)
-            .json({ error: "invalid username or password" })
+            .json({ error: "invalid username or password", statusCode: 401 })
             .end();
         }
 
@@ -89,7 +89,7 @@ class HandlerUser implements IHandlerUser {
       .catch((err) => {
         return res
           .status(500)
-          .json({ error: `failed to login ${err}` })
+          .json({ error: `failed to login ${err}`, statusCode: 401 })
           .end();
       });
   }
